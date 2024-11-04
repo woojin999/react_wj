@@ -1,12 +1,12 @@
 import React from "react";
-function HeartIconBtn({ isFavorite = false }) {
+
+function HeartIconBtn({ onClick, isFavorite = false }) {
+  // function handleFavorite() {
+  //   alert(isFavorite ? "좋아요" : "모르겠어요");
+  // }
+
   return (
-    <button className="btn">
-      {/* {isFavorite ? (
-        <img className="icon-heart" src="/img/heart-fill-icon.svg" alt="" />
-      ) : (
-        <img className="icon-heart" src="/img/heart-icon.svg" alt="" />
-      )} */}
+    <button className="btn" onClick={(e)=> onClick(e)}>
       <img
         className="btn__img"
         src={isFavorite ? "/img/heart-fill-icon.svg" : "/img/heart-icon.svg"}
@@ -14,6 +14,7 @@ function HeartIconBtn({ isFavorite = false }) {
     </button>
   );
 }
+
 function LinkIconBtn({ link }) {
   return (
     <a className="btn" href={link} target="_blank" rel="noreferrer">
@@ -29,6 +30,9 @@ export default function CourseItem({
   isFavorite,
   link,
 }) {
+  function handleFavorite() {
+    alert(isFavorite ? "좋아요" : "싫어요");
+  }
   return (
     <article className="course">
       <img className="course__img" src={thumbnail} alt="강의이미지" />
@@ -37,7 +41,7 @@ export default function CourseItem({
         <div className="course__description">{description}</div>
       </div>
       <div className="course__icons">
-        <HeartIconBtn isFavorite={isFavorite} />
+        <HeartIconBtn isFavorite={isFavorite} onClick={handleFavorite} />
         {link && <LinkIconBtn link={link} />}
       </div>
     </article>
