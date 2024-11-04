@@ -35,7 +35,6 @@ main {
 .courses {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
 }
 
 /* Course */
@@ -82,4 +81,12 @@ main {
 }
 .btn__img{
   width: 20px;
+}
+
+/* Divider */
+.divider{
+  border: none;
+  height: 1px;
+  background-color: #e2e2e2;
+  margin: 16px 0;
 }
