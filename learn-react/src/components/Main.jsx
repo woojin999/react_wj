@@ -13,6 +13,7 @@ export default function Main() {
       <h2>total:{total}</h2>
       <h2>flag: {flag.toString()}</h2>
       <button onClick={() => setFlag(!flag)}>toggle flag</button>
+      <hr/>
       <Counter onTotal={handleTotal} />
       <hr />
       <Counter onTotal={handleTotal} />

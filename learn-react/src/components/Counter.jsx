@@ -5,7 +5,9 @@ export default function Counter({ onTotal }) {
   const [counter, setCounter] = useState(0);
 
   const handleCounter = () => {
-    setCounter(counter + 1);
+    setCounter((prevCounter) => prevCounter + 1);
+    setCounter((prevCounter) => prevCounter + 1);
+    setCounter((prevCounter) => prevCounter + 1);
     if (onTotal) {
       onTotal();
     }
