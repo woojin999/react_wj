@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 function HeartIconBtn({ onClick, isFavorite = false }) {
   // function handleFavorite() {
   //   alert(isFavorite ? "좋아요" : "모르겠어요");
   // }
+
 
   return (
     <button className="btn" onClick={(e)=> onClick(e)}>
@@ -25,15 +26,16 @@ function LinkIconBtn({ link }) {
 
 export default function CourseItem({
   title,
+  id,
   description,
   thumbnail,
   isFavorite,
   link,
+  onFavorite,
 }) {
   function handleFavorite(e) {
     e.stopPropagation();
-    // e.preventDefault();
-    alert(isFavorite ? "좋아요" : "싫어요");
+    onFavorite(id, !isFavorite);
   }
   function handleItemClick() {
     alert('item click');
