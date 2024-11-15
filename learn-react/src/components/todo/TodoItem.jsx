@@ -1,7 +1,12 @@
-import React, { useContext } from "react";
-import { TodoDispatchContext, useTodosDispatch } from "../../context/TodoContext";
+import React, { memo, useContext } from "react";
+import {
+  TodoDispatchContext,
+  useTodosDispatch,
+} from "../../context/TodoContext";
 
-export default function TodoItem({ item }) {
+export default memo(function TodoItem({ item }) {
+  console.log("todoItem 렌더링");
+
   const dispatch = useTodosDispatch();
 
   // deleted
@@ -32,4 +37,4 @@ export default function TodoItem({ item }) {
       <button onClick={() => handleDeleteTodo(item.id)}>X</button>
     </label>
   );
-}
+});

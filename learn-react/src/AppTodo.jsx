@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from "react";
-import "./App.css";
+// import "./App.css";
 import TodoList from "./components/todo/TodoList";
 import AddTodo from "./components/todo/AddTodo";
 import { TodoProvider } from "./context/TodoContext";
